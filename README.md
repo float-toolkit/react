@@ -11,7 +11,7 @@
 
 </div>
 
-A [React](https://reactjs.org/) [hook](https://reactjs.org/docs/hooks-intro.html) wrapper for [**Float Toolkit**](https://https://float-toolkit.web.app/)
+A [React](https://reactjs.org/) [hook](https://reactjs.org/docs/hooks-intro.html) wrapper for [**Float Toolkit**](https://float-toolkit.web.app/)
 
 ## Get started
 
