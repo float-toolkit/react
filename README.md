@@ -25,7 +25,7 @@ npm install @float-toolkit/react
 
 ### Usage
 
-The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as math functions that also serve as setters for the output.
+The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as FloatToolkit methods that also serve as setters for the output.
 
 ```js
 import { useEffect } from "react";
