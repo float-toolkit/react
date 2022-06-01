@@ -1,0 +1,48 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"lib": ["esnext", "dom"],
+		"jsx": "preserve",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"jsxFactory": "",
+		"jsxFragmentFactory": "",
+		"jsxImportSource": "",
+		"reactNamespace": "",
+		"useDefineForClassFields": true,
+
+		"module": "esnext",
+		"rootDir": "./src/",
+		"moduleResolution": "node",
+		"types": ["react"],
+		"resolveJsonModule": true,
+
+		"declaration": true,
+		"outDir": "./dist/",
+		"stripInternal": true,
+		"noEmitOnError": true,
+		"declarationDir": "./typings/",
+
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"useUnknownInCatchVariables": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+
+		"skipLibCheck": true
+	},
+
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}
