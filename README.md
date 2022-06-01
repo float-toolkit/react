@@ -25,7 +25,7 @@ npm install @float-toolkit/react
 
 ### Usage
 
-The package export is a **React hook** called `useFloatToolkit`. It can be called from within a Function Component to create an outlet (reactive output).
+The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as math functions that also serve as setters for the output.
 
 ```js
 import React, { useEffect } from "react";
@@ -58,7 +58,7 @@ import useFloatToolkit, { ReactFT } from "@float-toolkit/react";
 
 interface Props {
 	numbers: number[];
-	precision: ReactFT.Precision;
+	precision?: ReactFT.Precision;
 }
 
 const Sum: FC = (props) => {
