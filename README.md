@@ -28,17 +28,17 @@ npm install @float-toolkit/react
 The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as math functions that also serve as setters for the output.
 
 ```js
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useFloatToolkit from "@float-toolkit/react";
 
 function Sum({ x, y }) {
-	const { add, outlet } = useFloatToolkit();
+	const { add, output } = useFloatToolkit();
 
 	useEffect(() => {
 		add([x, y]);
 	}, [x, y]);
 
-	return <span className="number">{outlet}</span>;
+	return <span className="number">{output}</span>;
 }
 ```
 
@@ -53,7 +53,7 @@ Just like its parent package, Float Toolkit for React is written in [TypeScript]
 #### Example:
 
 ```tsx
-import React, { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 import useFloatToolkit, { ReactFT } from "@float-toolkit/react";
 
 interface Props {
@@ -61,14 +61,14 @@ interface Props {
 	precision?: ReactFT.Precision;
 }
 
-const Sum: FC = (props) => {
-	const { add, outlet } = useFloatToolkit(props.precision);
+const Sum: FC<Props> = (props) => {
+	const { add, output } = useFloatToolkit(props.precision);
 
 	useEffect(() => {
 		add(props.numbers);
 	}, [props.numbers]);
 
-	return <span className="number">{outlet}</span>;
+	return <span className="number">{output}</span>;
 };
 ```
 
