@@ -74,10 +74,6 @@
   description: There is a merge conflict
   color: "261542"
 
-- name: 🧪 Needs tests
-  description: Unit testing is needed
-  color: "c23675"
-
 - name: 🍰 Nice to have
   description: Unintended behavior, but useful
   color: "c5def5"
@@ -93,10 +89,6 @@
 - name: 🛡️ Security
   description: Security or privacy concern
   color: "b60205"
-
-- name: 🧪 Tests
-  description: Improvements or additions to unit tests
-  color: "9f2d60"
 
 - name: ⚙️ Unreproducible
   description: The bug cannot be reproduced

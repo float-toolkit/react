@@ -4,15 +4,10 @@
 
 <h1 align="center">New Pull Request</h1>
 
-## First things first...
+## Before you go ANY further...
 
--   Make sure to read the [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md) before you go any further.
+-   Make sure to read the [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
 -   Is there an issue related to your changes? If so, link to it here. If not, create an issue before submitting your pull request in order to discuss.
-
-## (How) do your changes work?
-
--   Run all existing tests in the repository and make sure all of them pass.
--   Add or modify tests as needed to cover your changes.
--   Finally, add or modify documentation comments as needed.
+-   Add or modify documentation comments as needed in order to make your code understandable.
 
 Thank you for contributing to the **Float Toolkit** codebase!
