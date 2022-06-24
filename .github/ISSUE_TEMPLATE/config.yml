@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Documentation
+    url: https://float-toolkit.web.app
+    about: Please check the documentation before filing new issues.
+
+  - name: Support
+    url: https://github.com/float-toolkit/react/discussions/categories/q-a
+    about: Need help? Ask on GitHub discussions!
+
+  - name: Core package
+    url: https://github.com/float-toolkit/core/issues/new/choose
+    about: For issues related to @float-toolkit/core
