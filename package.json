@@ -32,13 +32,15 @@
 		"url": "https://github.com/float-toolkit/react/issues"
 	},
 	"homepage": "https://github.com/float-toolkit/react#readme",
+	"dependencies": {
+		"@float-toolkit/core": "^2.0.0"
+	},
 	"peerDependencies": {
-		"@float-toolkit/core": "^1.0.2",
-		"react": "^18.1.0"
+		"react": "^18.2.0"
 	},
 	"devDependencies": {
-		"@types/react": "^18.0.9",
-		"prettier": "^2.6.2",
-		"typescript": "^4.7.2"
+		"@types/react": "^18.0.14",
+		"prettier": "^2.7.1",
+		"typescript": "^4.7.4"
 	}
 }
