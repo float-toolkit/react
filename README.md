@@ -48,7 +48,7 @@ function Sum({ x, y }) {
 	<img src="https://raw.githubusercontent.com/float-toolkit/react/HEAD/media/tsftreact.svg" width="100" />
 </div>
 
-Just like its parent package, Float Toolkit for React is written in [TypeScript](https://www.typescriptlang.org/). You can import the `ReactFT` namespace which contains all the type declarations used by the package.
+Just like its parent package, Float Toolkit for React is written in [TypeScript](https://www.typescriptlang.org/). The `ReactFT` namespace contains all the type definitions used by the package.
 
 #### Example:
 
@@ -84,4 +84,5 @@ Before creating an issue, please consider the following:
 
 -   Refer to the [FloatToolkit documentation](https://float-toolkit.web.app/) and read **this file** carefully to make sure the error is actually a bug and not a mistake of your own.
 -   Make sure the issue hasn't already been reported or suggested.
--   After following these steps, you can read the [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md) and follow the steps to submit a PR.
+-   After following these steps, you can file an issue using one of our [templates](https://github.com/float-toolkit/react/issues/new/choose). Please make sure to follow our [Code of Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md).
+-   If you wish to [submit a pull request](https://github.com/float-toolkit/react/compare) alongside your issue, please follow our [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).

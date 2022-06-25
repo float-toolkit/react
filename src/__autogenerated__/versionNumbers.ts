@@ -1,4 +1,4 @@
 /**
  * @internal
  */
-export const versionNumbers = ["1", "0", "0"];
+export const versionNumbers = ["2", "0", "0"];
