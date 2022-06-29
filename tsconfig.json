@@ -2,20 +2,14 @@
 	"compilerOptions": {
 		"target": "es6",
 		"lib": ["esnext", "dom"],
-		"jsx": "preserve",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
-		"jsxFactory": "",
-		"jsxFragmentFactory": "",
-		"jsxImportSource": "",
-		"reactNamespace": "",
 		"useDefineForClassFields": true,
 
-		"module": "esnext",
+		"module": "es6",
 		"rootDir": "./src/",
 		"moduleResolution": "node",
 		"types": ["react"],
-		"resolveJsonModule": true,
 
 		"declaration": true,
 		"outDir": "./dist/",
@@ -44,5 +38,6 @@
 		"skipLibCheck": true
 	},
 
-	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
+	"include": ["./src/**/*.ts"],
+	"exclude": ["./src/__tests__/**/*.ts"]
 }

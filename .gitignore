@@ -5,6 +5,9 @@
 /dist
 /typings
 
+# testing and coverage
+/coverage
+
 # IDEs and editors
 /.idea
 .project

@@ -3,14 +3,26 @@
 
 	"tasks": [
 		{
-			"label": "TypeScript: Watch Mode",
+			"label": "Vitest: Test",
 
-			"type": "typescript",
-			"tsconfig": "tsconfig.json",
-			"option": "watch",
+			"type": "npm",
+			"script": "test",
 
 			"isBackground": true,
-			"group": "build"
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+
+		{
+			"label": "Vitest: Watch Mode",
+
+			"type": "npm",
+			"script": "testWatch",
+
+			"isBackground": true,
+			"group": "test"
 		},
 
 		{
@@ -30,6 +42,15 @@
 
 			"isBackground": true,
 			"group": "build"
+		},
+
+		{
+			"label": "NPM: Link local dependencies",
+
+			"type": "shell",
+			"command": "npm link ${input:localPackages}",
+
+			"problemMatcher": []
 		},
 
 		{
@@ -91,6 +112,12 @@
 		{
 			"id": "packages",
 			"description": "Dependencies to install",
+			"type": "promptString"
+		},
+
+		{
+			"id": "localPackages",
+			"description": "Local dependencies to link",
 			"type": "promptString"
 		},
 
