@@ -1,12 +1,14 @@
 # dependencies
 /node_modules
 
-# source
+# source and scripts
 /src
+/scripts
 /.github
 .gitignore
 
 # testing and coverage
+vitest.config.ts
 /coverage
 
 # IDEs and editors
