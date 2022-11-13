@@ -59,9 +59,12 @@ body:
       label: Contribution guidelines
       description: By submitting this issue, you agree that...
       options:
-        - label: This is a suggestion, not you [asking for support](https://github.com/float-toolkit/react/discussions/categories/q-a).
+        - label:
+            This is a suggestion, not you [asking for support](https://github.com/float-toolkit/react/discussions/categories/q-a).
           required: true
-        - label: You have read the [documentation](https://float-toolkit.web.app) and [README file](https://github.com/float-toolkit/react/blob/master/README.md) and made sure this is not already implemented.
+        - label:
+            You have read the [documentation](https://float-toolkit.web.app) and [README
+            file](https://github.com/float-toolkit/react/blob/master/README.md) and made sure this is not already implemented.
           required: true
         - label: The issue has not already been suggested.
           required: true
@@ -69,5 +72,8 @@ body:
           required: true
         - label: This feature fits with Float Toolkit's philosophy and goals.
           required: true
-        - label: You are following the project's [Code of Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md) and [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
+        - label:
+            You are following the project's [Code of
+            Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md) and [contribution
+            guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
           required: true

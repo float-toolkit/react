@@ -2,21 +2,23 @@
 	"compilerOptions": {
 		"target": "es6",
 		"lib": ["esnext", "dom"],
+		"jsx": "react-jsx",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
+		"jsxImportSource": "react",
 		"useDefineForClassFields": true,
 
 		"module": "es6",
-		"rootDir": "./src/",
 		"moduleResolution": "node",
 		"types": ["react"],
+		"resolveJsonModule": true,
 
-		"declaration": true,
-		"outDir": "./dist/",
+		"sourceMap": true,
+		"importHelpers": true,
 		"stripInternal": true,
 		"noEmitOnError": true,
-		"declarationDir": "./typings/",
 
+		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 
@@ -31,13 +33,16 @@
 		"alwaysStrict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"exactOptionalPropertyTypes": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
 		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
 
 		"skipLibCheck": true
 	},
 
-	"include": ["./src/**/*.ts"],
-	"exclude": ["./src/__tests__/**/*.ts"]
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
+	"exclude": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx"]
 }

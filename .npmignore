@@ -11,6 +11,11 @@
 vitest.config.ts
 /coverage
 
+# bun (not production ready)
+bun.lockb
+bunfig.toml
+node_modules.bun
+
 # IDEs and editors
 /.idea
 .project
@@ -21,6 +26,7 @@ vitest.config.ts
 *.sublime-workspace
 /.vscode
 .editorconfig
+.eslintrc.cjs
+.prettierrc
 .prettierignore
-tsconfig.json
-tsconfig.test.json
+tsconfig*.json

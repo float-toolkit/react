@@ -1,7 +1,6 @@
 import { act, renderHook, RenderHookResult } from "@testing-library/react";
 import { beforeEach, describe, expect, it } from "vitest";
-import useFloatToolkit from "../..";
-import { ReactFT } from "../..";
+import useFloatToolkit, { ReactFT } from "../..";
 
 import { defaultOptions } from "../__mocks__/defaultOptions";
 

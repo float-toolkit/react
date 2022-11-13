@@ -17,7 +17,7 @@ it("should have an initial value of 0", () => {
 it("should be changed by operation methods", () => {
 	const { rerender, result } = hookRenderer;
 
-	function run(callback: () => void, expectedOutput: number) {
+	function run(callback: () => void, expectedOutput: number): void {
 		act(() => {
 			callback();
 			rerender();

@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-// @ts-ignore
+import FloatToolkit from "@float-toolkit/core";
 import PackageJSON from "../../../package.json";
 
 import { ReactFT } from "../..";
-import FloatToolkit from "@float-toolkit/core";
 
 describe("ReactFT.VERSION", () => {
 	it("should contain the full version tag", () => {

@@ -14,7 +14,8 @@
 
 </div>
 
-A [React](https://reactjs.org/) [hook](https://reactjs.org/docs/hooks-intro.html) wrapper for [**Float Toolkit**](https://float-toolkit.web.app/)
+A [React](https://reactjs.org/) [hook](https://reactjs.org/docs/hooks-intro.html) wrapper for
+[**Float Toolkit**](https://float-toolkit.web.app/)
 
 ## Get started
 
@@ -28,7 +29,8 @@ npm install @float-toolkit/react
 
 ### Usage
 
-The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as FloatToolkit methods that also serve as setters for the output.
+The package export is a **React hook** called `useFloatToolkit`. It returns an object with an `output` state, as well as FloatToolkit
+methods that also serve as setters for the output.
 
 ```js
 import { useEffect } from "react";
@@ -51,7 +53,8 @@ function Sum({ x, y }) {
 	<img src="https://raw.githubusercontent.com/float-toolkit/react/HEAD/media/tsftreact.svg" width="100" />
 </div>
 
-Just like its parent package, Float Toolkit for React is written in [TypeScript](https://www.typescriptlang.org/). The `ReactFT` namespace contains all the type definitions used by the package.
+Just like its parent package, Float Toolkit for React is written in [TypeScript](https://www.typescriptlang.org/). The `ReactFT`
+namespace contains all the type definitions used by the package.
 
 #### Example:
 
@@ -64,7 +67,7 @@ interface Props {
 	precision?: ReactFT.Precision;
 }
 
-const Sum: FC<Props> = (props) => {
+const Sum: FC<Props> = props => {
 	const { add, output } = useFloatToolkit(props.precision);
 
 	useEffect(() => {
@@ -77,7 +80,8 @@ const Sum: FC<Props> = (props) => {
 
 ## Support
 
-Need help using Float Toolkit? Don't hesitate to reach out on [GitHub Discussions](https://github.com/float-toolkit/react/discussions/categories/q-a)!
+Need help using Float Toolkit? Don't hesitate to reach out on
+[GitHub Discussions](https://github.com/float-toolkit/react/discussions/categories/q-a)!
 
 ## Links
 
@@ -89,7 +93,11 @@ Need help using Float Toolkit? Don't hesitate to reach out on [GitHub Discussion
 
 Before creating an issue, please consider the following:
 
--   Read the [documentation](https://float-toolkit.web.app) and **this file** carefully to make sure the error is actually a bug and not a mistake of your own.
+-   Read the [documentation](https://float-toolkit.web.app) and **this file** carefully to make sure the error is actually a bug and
+    not a mistake of your own.
 -   Make sure the issue hasn't already been reported or suggested.
--   After following these steps, you can file an issue using one of our [templates](https://github.com/float-toolkit/react/issues/new/choose). Please make sure to follow our [Code of Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md).
--   If you wish to [submit a pull request](https://github.com/float-toolkit/react/compare) alongside your issue, please follow our [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
+-   After following these steps, you can file an issue using one of our
+    [templates](https://github.com/float-toolkit/react/issues/new/choose). Please make sure to follow our
+    [Code of Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md).
+-   If you wish to [submit a pull request](https://github.com/float-toolkit/react/compare) alongside your issue, please follow our
+    [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).

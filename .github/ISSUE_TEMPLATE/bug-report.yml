@@ -28,7 +28,8 @@ body:
     id: package-version
     attributes:
       label: Package version
-      description: Which package version are you using? You can check it in your `package.json` file or by running `npm list <package>`.
+      description:
+        Which package version are you using? You can check it in your `package.json` file or by running `npm list <package>`.
       placeholder: X.X.X
     validations:
       required: true
@@ -97,9 +98,14 @@ body:
       options:
         - label: This is a bug, not you [asking for support](https://github.com/float-toolkit/react/discussions/categories/q-a).
           required: true
-        - label: You have read the [documentation](https://float-toolkit.web.app) and [README file](https://github.com/float-toolkit/react/blob/master/README.md), and made sure this is not intended behavior.
+        - label:
+            You have read the [documentation](https://float-toolkit.web.app) and [README
+            file](https://github.com/float-toolkit/react/blob/master/README.md), and made sure this is not intended behavior.
           required: true
         - label: The issue has not already been reported.
           required: true
-        - label: You are following the project's [Code of Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md) and [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
+        - label:
+            You are following the project's [Code of
+            Conduct](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md) and [contribution
+            guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md).
           required: true
