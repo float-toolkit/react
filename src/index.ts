@@ -1,8 +1,7 @@
+import FloatToolkit from "@float-toolkit/core";
 import { useDebugValue, useMemo, useState } from "react";
 
-import FloatToolkit from "@float-toolkit/core";
-
-import { versionNumbers } from "./versionNumbers";
+import versionNumbers from "./versionNumbers";
 
 namespace ReactFT {
 	/**

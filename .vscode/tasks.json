@@ -3,106 +3,111 @@
 
 	"tasks": [
 		{
+			"label": "ESBuild: Compile",
+			"icon": {
+				"id": "archive",
+				"color": "terminal.ansiYellow"
+			},
+
+			"type": "npm",
+			"script": "build",
+
+			"isBackground": false,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": false,
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
+
+			"problemMatcher": ["$eslint-compact", "$tsc"]
+		},
+
+		{
 			"label": "Vitest: Test",
+			"icon": {
+				"id": "beaker",
+				"color": "terminal.ansiGreen"
+			},
 
 			"type": "npm",
 			"script": "test",
+
+			"isBackground": false,
+			"group": "test",
+			"presentation": {
+				"echo": false,
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
+
+			"problemMatcher": ["$eslint-compact", "$tsc"]
+		},
+
+		{
+			"label": "Vitest: Test (Watch Mode)",
+			"icon": {
+				"id": "search",
+				"color": "terminal.ansiGreen"
+			},
+
+			"type": "npm",
+			"script": "test:watch",
 
 			"isBackground": true,
 			"group": {
 				"kind": "test",
 				"isDefault": true
-			}
+			},
+			"presentation": {
+				"echo": false,
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
+
+			"problemMatcher": ["$eslint-compact", "$tsc"]
 		},
 
 		{
-			"label": "Vitest: Watch Mode",
+			"label": "Prettier ESLint: Format",
+			"icon": {
+				"id": "wand",
+				"color": "terminal.ansiMagenta"
+			},
 
 			"type": "npm",
-			"script": "testWatch",
+			"script": "format",
 
-			"isBackground": true,
-			"group": "test"
-		},
+			"isBackground": false,
+			"group": "build",
+			"presentation": {
+				"echo": false,
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
 
-		{
-			"label": "Prettier: Pretty-print...",
-
-			"type": "shell",
-			"command": "prettier --write ${input:files}",
-
-			"isBackground": true
-		},
-
-		{
-			"label": "NPM: Build",
-
-			"type": "npm",
-			"script": "build",
-
-			"isBackground": true,
-			"group": "build"
+			"problemMatcher": ["$eslint-compact"]
 		},
 
 		{
 			"label": "NPM: Link local dependencies",
+			"icon": {
+				"id": "package",
+				"color": "terminal.ansiRed"
+			},
 
 			"type": "shell",
 			"command": "npm link ${input:localPackages}",
 
-			"problemMatcher": []
-		},
-
-		{
-			"label": "NPM: Install dependencies",
-
-			"type": "shell",
-			"command": "npm i ${input:packages}",
-
-			"problemMatcher": []
-		},
-
-		{
-			"label": "NPM: Install peer dependencies",
-
-			"type": "shell",
-			"command": "npm i --save-peer ${input:packages}",
-
-			"problemMatcher": []
-		},
-
-		{
-			"label": "NPM: Install development dependencies",
-
-			"type": "shell",
-			"command": "npm i --save-dev ${input:packages}",
-
-			"problemMatcher": []
-		},
-
-		{
-			"label": "NPM: Install all production dependencies",
-
-			"type": "shell",
-			"command": "npm i --production",
-
-			"problemMatcher": []
-		},
-
-		{
-			"label": "NPM: Uninstall dependencies",
-
-			"type": "shell",
-			"command": "npm un ${input:delPackages}",
-
-			"problemMatcher": []
-		},
-
-		{
-			"label": "System: Delete permanently...",
-
-			"type": "shell",
-			"command": "rm -rf ${input:delFiles}",
+			"isBackground": false,
+			"presentation": {
+				"echo": false,
+				"panel": "dedicated",
+				"showReuseMessage": false
+			},
 
 			"problemMatcher": []
 		}
@@ -110,32 +115,8 @@
 
 	"inputs": [
 		{
-			"id": "packages",
-			"description": "Dependencies to install",
-			"type": "promptString"
-		},
-
-		{
 			"id": "localPackages",
 			"description": "Local dependencies to link",
-			"type": "promptString"
-		},
-
-		{
-			"id": "delPackages",
-			"description": "Dependencies to uninstall",
-			"type": "promptString"
-		},
-
-		{
-			"id": "files",
-			"description": "Files or directories to overwrite",
-			"type": "promptString"
-		},
-
-		{
-			"id": "delFiles",
-			"description": "Files or directories to delete",
 			"type": "promptString"
 		}
 	]

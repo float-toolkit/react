@@ -3,4 +3,5 @@ import PackageJSON from "../package.json";
 /**
  * @internal
  */
-export const versionNumbers = PackageJSON.version.split(".");
+const versionNumbers = PackageJSON.version.split(".");
+export default versionNumbers;

@@ -13,7 +13,7 @@
 	"scripts": {
 		"build": "rm -rf dist typings && npm test && node scripts/esbuild.js",
 		"test": "vitest run",
-		"testWatch": "npm run pretest && vitest --coverage=false",
+		"test:watch": "npm run pretest && vitest --coverage=false",
 		"pretest": "npm run format",
 		"format": "prettier --write . && eslint --ext .js,.jsx,.ts,.tsx"
 	},
