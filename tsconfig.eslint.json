@@ -1,6 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 
-	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./scripts/**/*.js", ".eslintrc.cjs", "vitest.config.ts"],
-	"exclude": []
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./scripts/**/*.mjs", "./.eslintrc.js", "./vitest.config.ts"],
+	"exclude": [],
+	"references": []
 }

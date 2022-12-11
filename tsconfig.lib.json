@@ -7,5 +7,7 @@
 		"rootDir": "./src/",
 		"declarationDir": "./typings/",
 		"noEmitOnError": false
-	}
+	},
+
+	"references": []
 }

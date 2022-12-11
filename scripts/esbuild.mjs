@@ -7,6 +7,7 @@ import { build } from "esbuild";
 import { dTSPathAliasPlugin } from "esbuild-plugin-d-ts-path-alias";
 
 const declarationDir = "./typings/";
+
 const banner = `/**
  * Float Toolkit for React
  * NPM package by LuisFerLCC
@@ -36,6 +37,7 @@ const isDir = path => !isDeclarationFile(path) && !isSourceMap(path);
  */
 async function allDeclarationFilesInDir(path) {
 	const files = (await readdir(path)).map(filename => resolve(path, filename));
+
 	await Promise.all(
 		files.filter(filename => isDir(filename)).map(async filename => files.push(...(await allDeclarationFilesInDir(filename))))
 	);
@@ -53,36 +55,45 @@ async function allSubdirs(path) {
 	return dirs.filter(dir => isDir(dir));
 }
 
-await build({
-	entryPoints: ["./src/index.ts"],
-	platform: "neutral",
-	target: "es6",
-	format: "esm",
-	external: ["./package.json", "@float-toolkit/core", "react"],
+/**
+ * @type {import("esbuild").Format[]}
+ */
+const formats = ["cjs", "esm"];
 
-	outfile: "./dist/index.js",
-	banner: {
-		js: banner,
-	},
-	bundle: true,
-	treeShaking: true,
-	sourcemap: true,
-	sourcesContent: false,
+await Promise.all(
+	formats.map(format =>
+		build({
+			entryPoints: ["./src/index.ts"],
+			platform: "neutral",
+			target: "es6",
+			format,
+			external: ["@float-toolkit/core", "react"],
 
-	plugins: [
-		dTSPathAliasPlugin({
-			tsconfigPath: `${process.cwd()}${sep}tsconfig.typings.json`,
-			outputPath: declarationDir,
-		}),
-	],
-});
+			outfile: `./dist/index.${format === "esm" ? "m" : ""}js`,
+			banner: {
+				js: banner,
+			},
+			bundle: true,
+			treeShaking: true,
+			sourcemap: true,
+			sourcesContent: false,
+
+			plugins: [
+				dTSPathAliasPlugin({
+					tsconfigPath: `${process.cwd()}${sep}tsconfig.lib.json`,
+					outputPath: declarationDir,
+				}),
+			],
+		})
+	)
+);
 
 const declarationFiles = await allDeclarationFilesInDir(declarationDir);
 const typingsSubdirs = await allSubdirs(declarationDir);
 
 await Promise.all(
 	declarationFiles.map(async file => {
-		if (!(await readFile(file)).toString().startsWith("export {};")) return;
+		if (!(await readFile(file)).toString().match(/^export ({}|default (?!function|abstract|class|interface)\w+)/)) return;
 
 		await rm(file);
 		return rm(`${file}.map`);

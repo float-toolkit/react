@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"composite": true,
+
 		"target": "es6",
 		"lib": ["esnext", "dom"],
 		"jsx": "react-jsx",
@@ -12,6 +14,9 @@
 		"moduleResolution": "node",
 		"types": ["react"],
 		"resolveJsonModule": true,
+
+		"allowJs": true,
+		"checkJs": true,
 
 		"sourceMap": true,
 		"importHelpers": true,
@@ -44,5 +49,6 @@
 	},
 
 	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
-	"exclude": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx"]
+	"exclude": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx"],
+	"references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.test.json" }, { "path": "./jsconfig.json" }]
 }

@@ -1,9 +1,9 @@
 # dependencies
 /node_modules
 
-# testing and coverage
-/coverage
-
 # production
 /dist
 /typings
+
+# testing and coverage
+/coverage

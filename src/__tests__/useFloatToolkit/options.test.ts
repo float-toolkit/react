@@ -1,10 +1,11 @@
 import { act, renderHook, RenderHookResult } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
+
 import useFloatToolkit, { ReactFT } from "../..";
 
 import { defaultOptions } from "../__mocks__/defaultOptions";
 
 let hookRenderer: RenderHookResult<ReactFT, unknown>;
+
 beforeEach(() => {
 	hookRenderer = renderHook(() => useFloatToolkit());
 });
@@ -27,6 +28,7 @@ describe("ReactFT.setOptions()", () => {
 		const { current } = hookRenderer.result;
 
 		prevOptions = current.options;
+
 		returnedOptions = current.setOptions({
 			forceUseDefaultPrecision: true,
 		});
@@ -42,6 +44,7 @@ describe("ReactFT.setOptions()", () => {
 
 	it("should reset the output if instructed", () => {
 		const { result, rerender } = hookRenderer;
+
 		const newOptions: ReactFT.Options = {
 			forceUseDefaultPrecision: true,
 		};
@@ -50,12 +53,14 @@ describe("ReactFT.setOptions()", () => {
 			result.current.add([1]);
 			rerender();
 		});
+
 		expect(result.current.output).toBe(1);
 
 		act(() => {
 			result.current.setOptions(newOptions, true);
 			rerender();
 		});
+
 		expect(result.current.output).toBe(0);
 		expect(result.current.options).toEqual<ReactFT.Options>({ ...returnedOptions, ...newOptions });
 	});
@@ -82,6 +87,7 @@ describe("FloatToolkit.resetOptions()", () => {
 
 	it("should reset the output if instructed", () => {
 		const { result, rerender } = hookRenderer;
+
 		const newOptions: ReactFT.Options = {
 			forceUseDefaultPrecision: true,
 		};
@@ -90,12 +96,14 @@ describe("FloatToolkit.resetOptions()", () => {
 			result.current.add([1]);
 			rerender();
 		});
+
 		expect(result.current.output).toBe(1);
 
 		act(() => {
 			result.current.resetOptions(newOptions, true);
 			rerender();
 		});
+
 		expect(result.current.output).toBe(0);
 		expect(result.current.options).toEqual<ReactFT.Options>({ ...defaultOptions, ...newOptions });
 	});

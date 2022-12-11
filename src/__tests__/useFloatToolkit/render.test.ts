@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it } from "vitest";
 import { renderHook, RenderHookResult } from "@testing-library/react";
 
 import useFloatToolkit, { ReactFT } from "../..";
+
 import { defaultOptions } from "../__mocks__/defaultOptions";
 
 interface FTArgs {
@@ -10,6 +10,7 @@ interface FTArgs {
 }
 
 let hookRenderer: RenderHookResult<ReactFT, FTArgs>;
+
 beforeEach(() => {
 	hookRenderer = renderHook((args: FTArgs) => useFloatToolkit(args.precision, args.options), {
 		initialProps: {},
@@ -28,6 +29,7 @@ describe("useFloatToolkit()", () => {
 
 	it("should render with custom options", () => {
 		const precision = 5;
+
 		const options: ReactFT.Options = {
 			forceUseDefaultPrecision: true,
 		};

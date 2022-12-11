@@ -1,4 +1,3 @@
-import { beforeEach, expect, it } from "vitest";
 import { act, renderHook, RenderHookResult } from "@testing-library/react";
 
 import useFloatToolkit, { ReactFT } from "../..";

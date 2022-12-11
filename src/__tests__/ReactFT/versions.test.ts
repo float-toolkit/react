@@ -1,5 +1,3 @@
-import { describe, expect, it } from "vitest";
-
 import FloatToolkit from "@float-toolkit/core";
 import PackageJSON from "../../../package.json";
 

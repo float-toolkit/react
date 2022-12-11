@@ -21,6 +21,8 @@ node_modules.bun
 *.launch
 .settings/
 *.sublime-workspace
+**/tsconfig*.tsbuildinfo
+**/jsconfig*.tsbuildinfo
 
 # IDE - VSCode
 .vscode/*

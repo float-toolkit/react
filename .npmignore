@@ -6,6 +6,9 @@
 /scripts
 /.github
 .gitignore
+/dist/**/*.js.map
+/dist/**/*.mjs.map
+/typings/**/*.d.ts.map
 
 # testing and coverage
 vitest.config.ts
@@ -26,7 +29,9 @@ node_modules.bun
 *.sublime-workspace
 /.vscode
 .editorconfig
-.eslintrc.cjs
+.eslintrc.js
 .prettierrc
 .prettierignore
 tsconfig*.json
+**/tsconfig*.tsbuildinfo
+**/jsconfig*.tsbuildinfo

@@ -1,0 +1,15 @@
+{
+	"extends": "./tsconfig.json",
+
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+
+		"outDir": "./dist/",
+		"noEmit": false
+	},
+
+	"include": ["./.eslintrc.js", "./scripts/**/*.mjs"],
+	"exclude": [],
+	"references": []
+}

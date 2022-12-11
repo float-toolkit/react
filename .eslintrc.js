@@ -1,4 +1,66 @@
 /**
+ * @param {string[]} statementTypes
+ */
+const alwaysPad = (...statementTypes) =>
+	statementTypes
+		.map(statementType => [
+			{
+				blankLine: "always",
+				prev: "*",
+				next: statementType,
+			},
+			{
+				blankLine: "always",
+				prev: statementType,
+				next: "*",
+			},
+		])
+		.flat();
+
+/**
+ * @param {[string, string[], string[]][]} statementTypeGroups
+ */
+const alwaysPadWithItselfAndWith = (...statementTypeGroups) =>
+	statementTypeGroups
+		.map(statementTypeGroup => [
+			{
+				blankLine: "always",
+				prev: [statementTypeGroup[0], ...statementTypeGroup[1]],
+				next: [statementTypeGroup[0], ...statementTypeGroup[2]],
+			},
+		])
+		.flat();
+
+/**
+ * @param {string[]} statementTypes
+ */
+const alwaysPadInGroups = (...statementTypes) =>
+	statementTypes
+		.map(statementType => [
+			...alwaysPad(statementType),
+			{
+				blankLine: "any",
+				prev: statementType,
+				next: statementType,
+			},
+		])
+		.flat();
+
+/**
+ * @param {string[]} statementTypes
+ */
+const neverPadWithItself = (...statementTypes) =>
+	statementTypes
+		.map(statementType => [
+			{
+				blankLine: "never",
+				prev: statementType,
+				next: statementType,
+			},
+		])
+		.flat();
+
+/**
  * @type {import("eslint").Linter.Config}
  */
 module.exports = {
@@ -24,7 +86,7 @@ module.exports = {
 		sourceType: "module",
 		ecmaVersion: "latest",
 	},
-	ignorePatterns: ["/dist/**/*", "/typings/**/*", "/docs/**/*", "/coverage/**/*"],
+	ignorePatterns: ["/dist/**/*", "/typings/**/*", "/coverage/**/*"],
 	plugins: ["@typescript-eslint", "react", "react-hooks", "import", "prettier"],
 
 	rules: {
@@ -47,6 +109,7 @@ module.exports = {
 		"import/no-unresolved": "off",
 		"import/order": "warn",
 
+		"curly": ["warn", "multi-or-nest"],
 		"new-cap": ["error", { capIsNew: false }],
 		"no-console": "off",
 		"no-inner-declarations": "off",
@@ -55,6 +118,28 @@ module.exports = {
 		"require-jsdoc": "off",
 		"spaced-comment": ["error", "always", { markers: ["/"] }],
 		"valid-jsdoc": "off",
+
+		"padding-line-between-statements": [
+			"warn",
+
+			...neverPadWithItself("if"),
+			...alwaysPad(
+				"class",
+				"directive",
+				"do",
+				"for",
+				"function",
+				"multiline-block-like",
+				"multiline-const",
+				"multiline-expression",
+				"multiline-let",
+				"switch",
+				"try",
+				"while"
+			),
+			...alwaysPadWithItselfAndWith(["case", [], ["default"]]),
+			...alwaysPadInGroups("cjs-export", "cjs-import", "export", "import"),
+		],
 
 		"prettier/prettier": [
 			"warn",
@@ -67,7 +152,7 @@ module.exports = {
 
 	overrides: [
 		{
-			files: ["./src/__tests__/**/*.ts", "./.eslintrc.cjs", "./jest.config.js", "./scripts/**/*.js"],
+			files: ["./src/__tests__/**/*.ts", "./.eslintrc.js", "./vitest.config.ts", "./scripts/**/*.mjs"],
 
 			env: {
 				es6: true,
@@ -76,7 +161,7 @@ module.exports = {
 		},
 
 		{
-			files: "./scripts/**/*.js",
+			files: ["./.eslintrc.js", "./scripts/**/*.mjs"],
 
 			rules: {
 				"@typescript-eslint/explicit-function-return-type": "off",
