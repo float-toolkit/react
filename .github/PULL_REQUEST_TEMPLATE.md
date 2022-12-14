@@ -4,6 +4,9 @@
 
 <h1 align="center">New Pull Request</h1>
 
+**IMPORTANT:** IF YOU WANT TO REPORT A SECURITY VULNERABILITY, PLEASE USE
+[SECURITY ADVISORIES](https://github.com/float-toolkit/core/security/advisories/new) TO FILE A PRIVATE REPORT.
+
 ## First things first...
 
 -   Make sure to read the [contribution guidelines](https://github.com/float-toolkit/react/blob/master/.github/CONTRIBUTING.md)

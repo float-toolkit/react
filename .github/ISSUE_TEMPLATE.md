@@ -12,4 +12,7 @@
 -   Please help us process your issue efficiently and in detail by using one of our
     [issue templates](https://github.com/float-toolkit/react/issues/new/choose).
 
+**IMPORTANT:** IF YOU WANT TO REPORT A SECURITY VULNERABILITY, PLEASE USE
+[SECURITY ADVISORIES](https://github.com/float-toolkit/core/security/advisories/new) TO FILE A PRIVATE REPORT.
+
 Thank you for contributing to the **Float Toolkit** codebase!
