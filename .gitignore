@@ -4,6 +4,7 @@
 # production
 /dist
 /typings
+*.tgz
 
 # testing and coverage
 /coverage

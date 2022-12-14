@@ -56,8 +56,6 @@ function Sum({ x, y }) {
 Just like its parent package, Float Toolkit for React is written in [TypeScript](https://www.typescriptlang.org/). The `ReactFT`
 namespace contains all the type definitions used by the package.
 
-#### Example:
-
 ```tsx
 import { FC, useEffect } from "react";
 import useFloatToolkit, { ReactFT } from "@float-toolkit/react";

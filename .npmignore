@@ -1,6 +1,9 @@
 # dependencies
 /node_modules
 
+# production
+*.tgz
+
 # source and scripts
 /src
 /scripts
