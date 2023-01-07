@@ -1,5 +1,5 @@
 import FloatToolkit from "@float-toolkit/core";
-import { useDebugValue, useMemo, useState } from "react";
+import { useCallback, useDebugValue, useEffect, useMemo, useState } from "react";
 
 import versionNumbers from "./versionNumbers";
 
@@ -95,56 +95,85 @@ function useFloatToolkit(defaultPrecision?: ReactFT.Precision, options?: ReactFT
 	const [output, setOutput] = useState(0);
 	useDebugValue(output);
 
-	const ft = useMemo(() => new FloatToolkit(defaultPrecision, options), [defaultPrecision, options]);
+	const ft = useMemo(() => new FloatToolkit(), []);
 
-	function add(numbers: number[], precision?: ReactFT.Precision): number {
-		const result = ft.add(numbers, precision);
+	useEffect(() => {
+		ft.defaultPrecision = defaultPrecision ?? ft.defaultPrecision;
+	}, [ft, defaultPrecision]);
 
-		setOutput(result);
-		return result;
-	}
+	useEffect(() => {
+		ft.resetOptions(options ?? {});
+	}, [ft, options]);
 
-	function divide(numbers: number[], precision?: ReactFT.Precision): number {
-		const result = ft.divide(numbers, precision);
+	const add = useCallback(
+		(numbers: number[], precision?: ReactFT.Precision): number => {
+			const result = ft.add(numbers, precision);
 
-		setOutput(result);
-		return result;
-	}
+			setOutput(result);
+			return result;
+		},
+		[ft]
+	);
 
-	function multiply(numbers: number[], precision?: ReactFT.Precision): number {
-		const result = ft.multiply(numbers, precision);
+	const divide = useCallback(
+		(numbers: number[], precision?: ReactFT.Precision): number => {
+			const result = ft.divide(numbers, precision);
 
-		setOutput(result);
-		return result;
-	}
+			setOutput(result);
+			return result;
+		},
+		[ft]
+	);
 
-	function resetOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options {
-		if (resetOutput) _methodResetOutput();
-		return ft.resetOptions(options);
-	}
+	const multiply = useCallback(
+		(numbers: number[], precision?: ReactFT.Precision): number => {
+			const result = ft.multiply(numbers, precision);
 
-	function round(n: number, precision?: ReactFT.Precision): number {
-		const result = ft.round(n, precision);
+			setOutput(result);
+			return result;
+		},
+		[ft]
+	);
 
-		setOutput(result);
-		return result;
-	}
-
-	function setOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options {
-		if (resetOutput) _methodResetOutput();
-		return ft.resetOptions(options);
-	}
-
-	function subtract(numbers: number[], precision?: ReactFT.Precision): number {
-		const result = ft.subtract(numbers, precision);
-
-		setOutput(result);
-		return result;
-	}
-
-	function _methodResetOutput(): void {
+	const _methodResetOutput = useCallback((): void => {
 		setOutput(0);
-	}
+	}, []);
+
+	const resetOptions = useCallback(
+		(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options => {
+			if (resetOutput) _methodResetOutput();
+			return ft.resetOptions(options);
+		},
+		[ft, _methodResetOutput]
+	);
+
+	const round = useCallback(
+		(n: number, precision?: ReactFT.Precision): number => {
+			const result = ft.round(n, precision);
+
+			setOutput(result);
+			return result;
+		},
+		[ft]
+	);
+
+	const setOptions = useCallback(
+		(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options => {
+			if (resetOutput) _methodResetOutput();
+			return ft.resetOptions(options);
+		},
+		[ft, _methodResetOutput]
+	);
+
+	const subtract = useCallback(
+		(numbers: number[], precision?: ReactFT.Precision): number => {
+			const result = ft.subtract(numbers, precision);
+
+			setOutput(result);
+			return result;
+		},
+		[ft]
+	);
 
 	return {
 		get defaultPrecision(): ReactFT.Precision {
