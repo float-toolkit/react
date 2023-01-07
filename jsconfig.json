@@ -3,7 +3,13 @@
 
 	"compilerOptions": {
 		"target": "esnext",
+		"lib": ["esnext"],
+
 		"module": "esnext",
+		"types": ["node"],
+
+		"allowJs": true,
+		"checkJs": true,
 
 		"outDir": "./dist/",
 		"noEmit": false

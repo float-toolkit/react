@@ -5,12 +5,12 @@ import versionNumbers from "./versionNumbers";
 
 namespace ReactFT {
 	/**
-	 * An integer between 1 and 17, which can be used as the default precision for the useFloatToolkit hook.
+	 * An integer between 1 and 17, which can be used as the default precision for the `useFloatToolkit` hook.
 	 */
 	export type Precision = FloatToolkit.Precision;
 
 	/**
-	 * Options that can be set to modify the behavior of the useFloatToolkit hook.
+	 * Options that can be set to modify the behavior of the `useFloatToolkit` hook.
 	 */
 	export interface Options extends FloatToolkit.Options {}
 
@@ -62,9 +62,9 @@ interface ReactFT {
 	add(numbers: number[], precision?: ReactFT.Precision): number;
 	divide(numbers: number[], precision?: ReactFT.Precision): number;
 	multiply(numbers: number[], precision?: ReactFT.Precision): number;
-	resetOptions(options?: ReactFT.Options, resetOutput?: boolean): ReactFT.Options;
+	resetOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options;
 	round(n: number, precision?: ReactFT.Precision): number;
-	setOptions(options?: ReactFT.Options, resetOutput?: boolean): ReactFT.Options;
+	setOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options;
 	subtract(numbers: number[], precision?: ReactFT.Precision): number;
 
 	/**
@@ -118,7 +118,7 @@ function useFloatToolkit(defaultPrecision?: ReactFT.Precision, options?: ReactFT
 		return result;
 	}
 
-	function resetOptions(options?: ReactFT.Options, resetOutput?: boolean): ReactFT.Options {
+	function resetOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options {
 		if (resetOutput) _methodResetOutput();
 		return ft.resetOptions(options);
 	}
@@ -130,7 +130,7 @@ function useFloatToolkit(defaultPrecision?: ReactFT.Precision, options?: ReactFT
 		return result;
 	}
 
-	function setOptions(options?: ReactFT.Options, resetOutput?: boolean): ReactFT.Options {
+	function setOptions(options?: Partial<ReactFT.Options>, resetOutput?: boolean): ReactFT.Options {
 		if (resetOutput) _methodResetOutput();
 		return ft.resetOptions(options);
 	}
@@ -150,6 +150,7 @@ function useFloatToolkit(defaultPrecision?: ReactFT.Precision, options?: ReactFT
 		get defaultPrecision(): ReactFT.Precision {
 			return ft.defaultPrecision;
 		},
+
 		set defaultPrecision(newPrecision: ReactFT.Precision) {
 			ft.defaultPrecision = newPrecision;
 		},

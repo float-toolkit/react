@@ -48,7 +48,7 @@
 		"skipLibCheck": true
 	},
 
-	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./package.json"],
 	"exclude": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx"],
 	"references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.test.json" }, { "path": "./jsconfig.json" }]
 }

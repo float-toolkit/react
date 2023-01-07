@@ -8,7 +8,7 @@
 
 [![NPM latest version](https://img.shields.io/npm/v/@float-toolkit/react?label=version&logo=npm)](https://www.npmjs.com/package/@float-toolkit/react)
 [![NPM downloads](https://img.shields.io/npm/dt/@float-toolkit/react?logo=npm)](https://www.npmjs.com/package/@float-toolkit/react)
-[![Tests status](https://img.shields.io/github/workflow/status/float-toolkit/react/Test%20with%20Vitest?label=tests&logo=vite&logoColor=white)](https://github.com/float-toolkit/react/actions/workflows/testWithVitest.yml)
+[![Tests status](https://img.shields.io/github/actions/workflow/status/float-toolkit/react/testWithVitest.yml?branch=master&label=tests&logo=vite&logoColor=white)](https://github.com/float-toolkit/react/actions/workflows/testWithVitest.yml)
 [![Code coverage with Codecov](https://img.shields.io/codecov/c/github/float-toolkit/react/tests?logo=codecov&logoColor=white)](https://codecov.io/gh/float-toolkit/react)
 [![Contributor Covenant Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-2.1-5e0d73)](https://github.com/float-toolkit/react/blob/master/.github/CODE_OF_CONDUCT.md)
 

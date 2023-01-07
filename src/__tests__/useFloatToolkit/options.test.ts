@@ -66,7 +66,7 @@ describe("ReactFT.setOptions()", () => {
 	});
 });
 
-describe("FloatToolkit.resetOptions()", () => {
+describe("ReactFT.resetOptions()", () => {
 	let returnedOptions: Readonly<ReactFT.Options>;
 
 	beforeEach(() => {
@@ -77,11 +77,11 @@ describe("FloatToolkit.resetOptions()", () => {
 		});
 	});
 
-	it("should reset and modify the FloatToolkit's options", () => {
+	it("should reset and modify the hook's options", () => {
 		expect(returnedOptions).toEqual<ReactFT.Options>({ ...defaultOptions, forceUseDefaultPrecision: true });
 	});
 
-	it("should return a valid frozen FloatToolkit.Options object", () => {
+	it("should return a valid frozen ReactFT.Options object", () => {
 		expect(Object.isFrozen(returnedOptions)).toBe(true);
 	});
 

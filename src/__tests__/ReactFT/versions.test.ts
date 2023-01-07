@@ -8,11 +8,11 @@ describe("ReactFT.VERSION", () => {
 		expect(ReactFT.VERSION.full).toBe(PackageJSON.version);
 	});
 
-	it("should contain the major number version", () => {
+	it("should contain the major version", () => {
 		expect(ReactFT.VERSION.major).toBe(PackageJSON.version.split(".")[0]);
 	});
 
-	it("should contain the minor number version", () => {
+	it("should contain the minor version", () => {
 		expect(ReactFT.VERSION.minor).toBe(PackageJSON.version.split(".")[1]);
 	});
 

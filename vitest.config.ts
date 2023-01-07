@@ -15,7 +15,7 @@ export default defineConfig({
 			clean: true,
 			cleanOnRerun: true,
 
-			reporter: ["clover", "lcov", "json"],
+			reporter: ["clover", "lcov", "json", "text"],
 		},
 	},
 });

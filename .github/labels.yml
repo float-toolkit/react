@@ -14,10 +14,6 @@
   description: This bug is caused by @float-toolkit/core
   color: "f7df1e"
 
-- name: ⚛️ React issue
-  description: This bug is caused by React
-  color: "61dafb"
-
 - name: 💻 Dev Dependencies
   description: PRs that update development dependencies
   color: "155e8c"
@@ -74,6 +70,10 @@
   description: There is a merge conflict
   color: "261542"
 
+- name: 🧪 Needs tests
+  description: Unit testing is needed
+  color: "c23675"
+
 - name: 🍰 Nice to have
   description: Unintended behavior, but useful
   color: "c5def5"
@@ -82,13 +82,17 @@
   description: Development on this issue has been suspended
   color: "d4c5f9"
 
+- name: ⚛️ React issue
+  description: This bug is caused by React
+  color: "61dafb"
+
 - name: ✅ Ready to merge
   description: This PR is ready to be merged
   color: "0ff40b"
 
-- name: 🛡️ Security
-  description: Security or privacy concern
-  color: "b60205"
+- name: 🧪 Tests
+  description: Improvements or additions to unit tests
+  color: "9f2d60"
 
 - name: ⚙️ Unreproducible
   description: The bug cannot be reproduced

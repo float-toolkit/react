@@ -2,11 +2,10 @@
 	"extends": "./tsconfig.json",
 
 	"compilerOptions": {
-		"types": ["react", "node", "vitest/globals"],
-		"resolveJsonModule": true
+		"types": ["react", "node", "vitest/globals"]
 	},
 
-	"include": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx", "./package.json"],
+	"include": ["./src/__tests__/**/*.test.ts", "./src/__tests__/**/*.test.tsx"],
 	"exclude": [],
 	"references": [{ "path": "./tsconfig.json" }]
 }
