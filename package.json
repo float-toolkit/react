@@ -17,7 +17,7 @@
 		"test": "vitest run",
 		"test:watch": "npm run pretest && vitest --coverage=false",
 		"pretest": "rm -rf coverage && npm run format && tsc --noEmit",
-		"format": "prettier --write . && eslint --ext .js,.ts,.tsx --fix ."
+		"format": "prettier --write . && eslint --ext .js,.mjs,.ts,.tsx --fix ."
 	},
 	"repository": {
 		"type": "git",
